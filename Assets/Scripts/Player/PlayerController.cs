@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour {
         if (vivo) {
             hp -= dano;
             
-            if (hp < 0) {
+            if (hp <= 0) {
                 hp = 0;
                 animator.SetTrigger("death");
                 vivo = false;
+                FindObjectOfType<GameplayUIController>().GameOver();
             } else {
                 animator.SetTrigger("hit");
             }

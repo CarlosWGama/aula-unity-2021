@@ -51,6 +51,7 @@ public class Inimigo : MonoBehaviour {
             animator.SetTrigger("morreu");
             vivo = false;
             Destroy(gameObject, 3f);
+            GameObject.FindObjectOfType<GameplayUIController>().GanharPontos();
         }
     }
 
