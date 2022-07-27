@@ -8,13 +8,11 @@ public class PlayerController : MonoBehaviour {
     public float velocidade = 4f; //Valor padrão inicial
     private Animator animator;
 
-    private GameObject ataque;
     private float cooldownAtaque = 0.8f;
     public bool vivo = true;
 
     void Awake() {
         animator = GetComponent<Animator>();
-        ataque = transform.GetChild(0).gameObject; //Pega o primeiro objeto filho
     }
 
     public void SofrerDano(int dano) {
@@ -57,7 +55,6 @@ public class PlayerController : MonoBehaviour {
             if (cooldownAtaque > 0) cooldownAtaque -= Time.deltaTime;
             if (Input.GetButton("Ataque") && cooldownAtaque < 0) {
                 animator.SetTrigger("attack");
-                ataque.SetActive(true);
                 cooldownAtaque = 0.8f;
             }
         }

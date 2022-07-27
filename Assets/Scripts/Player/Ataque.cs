@@ -6,10 +6,6 @@ public class Ataque : MonoBehaviour {
 
     private float desabilitar = 0.5f;
 
-    void OnEnable() {
-        desabilitar = 0.5f;    //Ao habilitar o objeto zera o time
-    }
-
     void Update() {
         desabilitar -= Time.deltaTime;
         if (desabilitar < 0) {
