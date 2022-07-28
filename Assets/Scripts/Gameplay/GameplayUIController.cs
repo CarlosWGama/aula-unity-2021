@@ -12,9 +12,13 @@ public class GameplayUIController : MonoBehaviour {
     public GameObject gameOver;
     private PlayerController player;
 
+    public AudioClip BGM;
+
     void Start() {
-        player = GameObject.FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<PlayerController>();
         vida.maxValue = 10;
+        if (BGM != null)
+            AudioController.Instance.PlayBGM(BGM);
     }
 
     void Update() {

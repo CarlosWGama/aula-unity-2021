@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour {
     private float cooldownAtaque = 0.8f;
     public bool vivo = true;
 
+    [Header("Audios")]
+    public AudioClip audioAtaque;
+    public AudioClip audioDano;
+
     void Awake() {
         animator = GetComponent<Animator>();
     }
@@ -19,6 +23,7 @@ public class PlayerController : MonoBehaviour {
         if (vivo) {
             hp -= dano;
             
+            AudioController.Instance.PlaySE(audioDano);
             if (hp <= 0) {
                 hp = 0;
                 animator.SetTrigger("death");
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetButton("Ataque") && cooldownAtaque < 0) {
                 animator.SetTrigger("attack");
                 cooldownAtaque = 0.8f;
+                AudioController.Instance.PlaySE(audioAtaque);
             }
         }
 

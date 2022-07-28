@@ -88,7 +88,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -211,6 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   velocidade: 4
+  vivo: 1
+  audioAtaque: {fileID: 8300000, guid: 60bfb69359833f144a19bbe88ddc1010, type: 3}
+  audioDano: {fileID: 8300000, guid: f6fda817f43ad3a418bddb7908e4b0c1, type: 3}
 --- !u!95 &8281275014013087292
 Animator:
   serializedVersion: 4
